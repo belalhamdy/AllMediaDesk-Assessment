@@ -5,11 +5,11 @@ function isNumberAscending(number) {
     return true;
 }
 
-function runTests() {
+function runTestsTask2() {
     let currNumber = "0";
     for (let i = 0; i <= 1e6; ++i) {
         if (isNumberAscending(i)) currNumber = i.toString();
-        if (solve(i.toString()) !== currNumber) {
+        if (solveTask2(i.toString()) !== currNumber) {
             alert("Error in task 2 tests.");
             return;
         }
@@ -21,7 +21,7 @@ function runTests() {
     alert("Success");
 }
 
-function solve(numberStr) {
+function solveTask2(numberStr) {
     let numberArr = Array.from(numberStr)
     let turning_point = numberArr.length;
     let subtract = false;
@@ -47,9 +47,9 @@ function solve(numberStr) {
     return numberArr.slice(lastNonZero).join("")
 }
 
-function run() {
+function runTask2() {
     let input = document.getElementById("task2Input").value;
-    if (input === null || input === '') console.log('bye')
-    document.getElementById("task2Result").value = solve(input);
+    if (input === null || input === '')  document.getElementById("task2Result").value = "";
+    document.getElementById("task2Result").value = solveTask2(input);
 }
 
